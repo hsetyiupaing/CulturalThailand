@@ -1,8 +1,8 @@
 export class Header extends HTMLElement {
     connectedCallback() {
-        const title = this.getAttribute('title') || 'Title'
+        const title = this.getAttribute('title') || 'Title';
         this.innerHTML = `
-            <nav class="bg-amber-500 p-5 text-white flex flex-col sm:flex-row sm:items-center sm:justify-between text-center">
+            <nav class="fixed top-0 left-0 w-full z-50 bg-amber-500 p-5 text-white flex flex-col sm:flex-row sm:items-center sm:justify-between text-center shadow-md">
                 <h1 class="font-bold text-3xl">${title}</h1>
                 <ul class="mt-3 space-x-4">
                     <li class="inline"><a href="index.html" class="hover:underline">Home</a></li>
@@ -11,7 +11,6 @@ export class Header extends HTMLElement {
                     <li class="inline"><a href="contactus.html" class="hover:underline">Contact Us</a></li>
                 </ul>
             </nav>
-
-        `
+        `;
     }
 }
