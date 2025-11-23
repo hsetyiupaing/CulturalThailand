@@ -2,7 +2,7 @@
 
 @layer base{
     body{
-        @apply m-0 p-0 font-sans pt-18
+        @apply m-0 p-0 font-sans
     }
     /* Typography: headings and paragraphs */
     h1 {
@@ -27,5 +27,11 @@
     /* Helper for a larger lead paragraph */
     .lead {
         @apply text-lg sm:text-xl leading-relaxed text-gray-800;
+    }
+}
+
+@layer utilities{
+    .footer-note{
+        @apply text-sm opacity-80 text-amber-50;
     }
 }

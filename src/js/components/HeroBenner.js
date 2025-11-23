@@ -4,7 +4,7 @@ export class HeroBenner extends HTMLElement {
     const image = this.getAttribute('image') || '';
 
     this.innerHTML = `
-      <section class="relative w-full h-[60vh] flex items-center justify-center overflow-hidden">
+      <section class="relative w-full h-screen flex items-center justify-center overflow-hidden">
 
         <!-- Background Image -->
         <div class="absolute inset-0">
