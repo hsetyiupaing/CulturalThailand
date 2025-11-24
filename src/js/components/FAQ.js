@@ -5,7 +5,10 @@ export class FAQ extends HTMLElement {
         this.faqs = [
             { q: "What is Thailand famous for?", a: "Culture, temples, food, beaches." },
             { q: "Best time to visit?", a: "November to February for cool weather." },
-            { q: "Is Thailand cheap?", a: "Yes, compared to Western countries." }
+            { q: "Is Thailand cheap?", a: "Yes, compared to Western countries." },
+            { q: "Do I need a visa?", a: "Many nationalities get visa-free entry for short stays; check your country's rules." },
+            { q: "Is it safe to travel?", a: "Thailand is generally safe for tourists; follow normal precautions and local advice." },
+            { q: "What currency is used?", a: "Thai Baht (THB). Credit cards are widely accepted in cities." }
         ];
     }
 

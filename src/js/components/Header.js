@@ -2,28 +2,28 @@ export class Header extends HTMLElement {
     connectedCallback() {
         const title = this.getAttribute('title') || 'Title';
 
-        // determine link prefix based on current path so links work from pages and media subpages
-        const path = (typeof window !== 'undefined' && window.location && window.location.pathname) ? window.location.pathname : '';
-        let prefix = 'src/pages/';
-        if (path.includes('/src/pages/media/') || path.includes('/src/pages/media')) prefix = '../';
-        else if (path.includes('/src/pages/')) prefix = './';
+        let prefix = '/src/pages/';
 
         const homeLink = prefix + 'index.html';
         const aboutLink = prefix + 'about.html';
-        const mediaLink = prefix + 'media.html';
+        const locationsLink = prefix + 'famousLocations.html';
+        const ethnicLink = prefix + 'ethnic.html';
         const contactLink = prefix + 'contactus.html';
 
-            this.innerHTML = `
-                <nav role="navigation" aria-label="Main navigation" class="fixed top-0 left-0 w-full z-50 p-2.5 shadow-md bg-gray-200 backdrop:opacity-75">
+        this.innerHTML = `
+            <nav role="navigation" aria-label="Main navigation" class="fixed top-0 left-0 w-full z-50 p-2.5 shadow-md bg-gray-200 backdrop:opacity-75">
                 <div class="max-w-7xl mx-auto flex items-center justify-between">
                     <h1 class="font-bold text-2xl sm:text-3xl ">${title}</h1>
-                    <button id="navToggle" class="sm:hidden  focus:outline-none" aria-label="Toggle navigation">
-                        <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+                    <button id="navToggle" class="sm:hidden focus:outline-none" aria-label="Toggle navigation">
+                        <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                        </svg>
                     </button>
-                    <ul id="navLinks" class="hidden sm:flex space-x-6  text-lg">
+                    <ul id="navLinks" class="hidden sm:flex space-x-6 text-lg">
                         <li><a href="${homeLink}" class="hover:underline">Home</a></li>
                         <li><a href="${aboutLink}" class="hover:underline">About</a></li>
-                        <li><a href="${mediaLink}" class="hover:underline">Media</a></li>
+                        <li><a href="${locationsLink}" class="hover:underline">Places</a></li>
+                        <li><a href="${ethnicLink}" class="hover:underline">Ethnics</a></li>
                         <li><a href="${contactLink}" class="hover:underline">Contact</a></li>
                     </ul>
                 </div>
@@ -31,7 +31,8 @@ export class Header extends HTMLElement {
                     <ul class="flex flex-col space-y-2 text-center">
                         <li><a href="${homeLink}" class="block px-4 py-2 hover:bg-amber-600">Home</a></li>
                         <li><a href="${aboutLink}" class="block px-4 py-2 hover:bg-amber-600">About</a></li>
-                        <li><a href="${mediaLink}" class="block px-4 py-2 hover:bg-amber-600">Media</a></li>
+                        <li><a href="${locationsLink}" class="block px-4 py-2 hover:bg-amber-600">Places</a></li>
+                        <li><a href="${ethnicLink}" class="block px-4 py-2 hover:bg-amber-600">Ethnics</a></li>
                         <li><a href="${contactLink}" class="block px-4 py-2 hover:bg-amber-600">Contact</a></li>
                     </ul>
                 </div>
@@ -55,8 +56,9 @@ export class Header extends HTMLElement {
 
     _toggle(e) {
         e.stopPropagation();
-        if (!this._mobile) return;
-        this._mobile.classList.toggle('hidden');
+        if (this._mobile) {
+            this._mobile.classList.toggle('hidden');
+        }
     }
 
     _onDocClick(e) {
