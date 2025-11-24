@@ -2,7 +2,22 @@ export class Header extends HTMLElement {
     connectedCallback() {
         const title = this.getAttribute('title') || 'Title';
 
-        let prefix = '/src/pages/';
+        // Automatically detect correct prefix based on folder depth
+        let path = window.location.pathname;
+
+        // Count how many folders deep we are after /src/pages/
+        let basePath = "/src/pages/";
+        let depth = 0;
+
+        if (path.startsWith(basePath)) {
+            let subPath = path.slice(basePath.length); // remove "/src/pages/"
+            depth = subPath.split("/").length - 1; // count folder depth
+        }
+
+        // Generate "../" repeated depth times
+        let up = "../".repeat(depth);
+
+        let prefix = up; // dynamically correct prefix
 
         const homeLink = prefix + 'index.html';
         const aboutLink = prefix + 'about.html';
