@@ -7,6 +7,7 @@ import { FAQ } from "./components/FAQ.js";
 import { ContentCardWImage } from "./components/ContentCardWImage.js";
 import { InfoCard } from "./components/InfoCard.js";
 import { ProfileCard } from "./components/ProfileCard.js";
+import { LocationCard } from "./components/LocationCard.js";
 
 
 // Debug helper to confirm the module loaded in the browser
@@ -24,6 +25,7 @@ customElements.define('faq-section', FAQ);
 customElements.define('contentcard-w-image', ContentCardWImage);
 customElements.define('info-card', InfoCard)
 customElements.define('profile-card', ProfileCard)
+customElements.define('location-card', LocationCard);
 
 window.addEventListener("DOMContentLoaded", () => {
     if(!document.querySelector("header-bar")){
