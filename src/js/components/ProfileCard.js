@@ -13,13 +13,12 @@ export class ProfileCard extends HTMLElement {
                 <p class="text-gray-700">${university}</p>
 
                 <div class="flex justify-center gap-4 text-2xl my-4">
-                    <a href="#"><i class="fa fa-dribbble"></i></a>
-                    <a href="#"><i class="fa fa-twitter"></i></a>
-                    <a href="#"><i class="fa fa-linkedin"></i></a>
-                    <a href="#"><i class="fa fa-facebook"></i></a>
+                    <a href="https://x.com/" target="_blank"><i class="fa fa-twitter"></i></a>
+                    <a href="https://www.linkedin.com/feed/" target="_blank"><i class="fa fa-linkedin"></i></a>
+                    <a href="https://www.facebook.com/" target="_blank"><i class="fa fa-facebook"></i></a>
                 </div>
 
-                <button class="w-full bg-amber-600 text-white py-2 rounded-lg cursor-pointer">Contact</button>
+                <a href="./contactus.html" class="w-full block bg-amber-600 hover:bg-amber-700 text-white py-2 rounded-lg cursor-pointer">Contact</a>
             </div>
         `;
     }

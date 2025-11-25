@@ -1,5 +1,28 @@
 export class Footer extends HTMLElement {
     connectedCallback() {
+                // Automatically detect correct prefix based on folder depth
+        let path = window.location.pathname;
+
+        // Count how many folders deep we are after /src/pages/
+        let basePath = "/src/pages/";
+        let depth = 0;
+
+        if (path.startsWith(basePath)) {
+            let subPath = path.slice(basePath.length); // remove "/src/pages/"
+            depth = subPath.split("/").length - 1; // count folder depth
+        }
+
+        // Generate "../" repeated depth times
+        let up = "../".repeat(depth);
+
+        let prefix = up; // dynamically correct prefix
+
+        const homeLink = prefix + 'index.html';
+        const aboutLink = prefix + 'about.html';
+        const locationsLink = prefix + 'famousLocations.html';
+        const ethnicLink = prefix + 'ethnic.html';
+        const contactLink = prefix + 'contactus.html';
+
         this.innerHTML = `
             <footer class="w-full bg-gray-900 text-white py-10 mt-10">
                 <div class="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-3 gap-10 px-6 text-center sm:text-left">
@@ -16,10 +39,11 @@ export class Footer extends HTMLElement {
                     <div>
                         <h2 class="font-bold text-lg mb-3">Quick Links</h2>
                         <ul class="space-y-2 text-sm">
-                            <li><a href="index.html" class="hover:underline">Home</a></li>
-                            <li><a href="about.html" class="hover:underline">About</a></li>
-                            <li><a href="media.html" class="hover:underline">Media</a></li>
-                            <li><a href="contactus.html" class="hover:underline">Contact Us</a></li>
+                            <li><a href="${homeLink}" class="hover:underline">Home</a></li>
+                            <li><a href="${aboutLink}" class="hover:underline">About</a></li>
+                            <li><a href="${locationsLink}" class="hover:underline">Places</a></li>
+                            <li><a href="${ethnicLink}" class="hover:underline">Ethinics</a></li>
+                            <li><a href="${contactLink}" class="hover:underline">Contect Us</a></li>
                         </ul>
                     </div>
 
@@ -33,7 +57,7 @@ export class Footer extends HTMLElement {
                 </div>
 
                 <div class="text-center text-xs opacity-70 mt-8">
-                    © 2025 Cultural Thailand — All Rights Reserved
+                    © 2025 IT 363 Frontend Web Development All Rights Reserved
                 </div>
             </footer>
         `;
