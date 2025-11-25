@@ -3,11 +3,12 @@ export class ContentCardWImage extends HTMLElement {
         const image = this.getAttribute("image") || "";
         const title = this.getAttribute("title") || "Content Title";
         const body = this.getAttribute("body") || "Lorem ipsum dolor sit amet.";
+        const style = this.getAttribute("addedStyle") || '';
 
         this.innerHTML = `
             <section 
-                class="w-full py-20 bg-gradient-to-r 
-                       from-yellow-300 via-yellow-400 to-yellow-500">
+                class="w-full py-20 ${style}"
+            >
 
                 <div class="max-w-5xl mx-auto px-6 
                             grid grid-cols-1 md:grid-cols-2 items-center gap-12">
