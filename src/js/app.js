@@ -18,8 +18,8 @@ customElements.define('info-cards', InfoCards);
 customElements.define('content-card', ContentCard);
 customElements.define('media-content', MediaContent);
 
-customElements.define('header-bar', Header);
-customElements.define('footer-bar', Footer);
+customElements.define('header-nav', Header);
+customElements.define('footer-section', Footer);
 customElements.define('faq-section', FAQ);
 
 customElements.define('contentcard-w-image', ContentCardWImage);
@@ -28,14 +28,14 @@ customElements.define('profile-card', ProfileCard)
 customElements.define('location-card', LocationCard);
 
 window.addEventListener("DOMContentLoaded", () => {
-    if(!document.querySelector("header-bar")){
-        const header = document.createElement("header-bar");
-        header.setAttribute("title", "Catural Thailand");
-        document.body.append(header)
+    if(!document.querySelector("header-nav")){
+        const header = document.createElement("header-nav");
+        header.setAttribute("title", "Cultural Thailand");
+        document.body.prepend(header)
     }
     
-    if(!document.querySelector("footer-bar")){
-        const footer = document.createElement("footer-bar");
+    if(!document.querySelector("footer-section")){
+        const footer = document.createElement("footer-section");
         document.body.append(footer)
     }
 })

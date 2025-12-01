@@ -6,7 +6,7 @@ export class Header extends HTMLElement {
         let path = window.location.pathname;
 
         // Count how many folders deep we are after /src/pages/
-        let basePath = "/src/pages/";
+        let basePath = "/docs/";
         let depth = 0;
 
         if (path.startsWith(basePath)) {
