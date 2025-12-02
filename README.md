@@ -1,4 +1,4 @@
-# Cultural Thailand
+# **Cultural Thailand**
 
 A comprehensive web application showcasing Thailand's rich cultural heritage, famous locations, and traditions. Built as a collaborative project for **IT 362 Frontend Web Development** at **Asia-Pacific International University**.
 
@@ -40,27 +40,29 @@ Cultural Thailand is an educational platform that connects people with Thailand'
 
 ```
 CulturalThailand/
-├── docs/                  ← GitHub Pages entry point
-│   ├── index.html
-│   ├── about.html
-│   ├── contactus.html
-│   ├── ethnic.html
-│   ├── famousLocations.html
-│   └── locations/
-│       ├── Ayutthaya.html
-│       ├── ChiangMaiMuseum.html
-│       ├── FloatingMarket.html
-│       ├── GrandPalace.html
-│       ├── SanctuaryofTruth.html
-│       ├── SiThep.html
-│       ├── Sukhothai.html
-│       ├── WatArun.html
-│       ├── WatPhra.html
-│       └── WatRongKhun.html
-├── src/                  ← development/source files
+├── src/
+│   ├── docs/                       ← All HTML pages (moved from root/docs)
+│   │   ├── index.html
+│   │   ├── about.html
+│   │   ├── contactus.html
+│   │   ├── ethnic.html
+│   │   ├── famousLocations.html
+│   │   └── locations/
+│   │       ├── Ayutthaya.html
+│   │       ├── ChiangMaiMuseum.html
+│   │       ├── FloatingMarket.html
+│   │       ├── GrandPalace.html
+│   │       ├── SanctuaryofTruth.html
+│   │       ├── SiThep.html
+│   │       ├── Sukhothai.html
+│   │       ├── WatArun.html
+│   │       ├── WatPhra.html
+│   │       └── WatRongKhun.html
+│
 │   ├── css/
 │   │   ├── input.css
-│   │   └── output.css (compiled Tailwind)
+│   │   └── output.css              ← Compiled Tailwind
+│
 │   ├── js/
 │   │   ├── app.js
 │   │   ├── components/
@@ -76,8 +78,9 @@ CulturalThailand/
 │   │   │   └── mediaComponents.js
 │   │   └── events/
 │   │       └── FormSubmission/
-├── assets/
-│   └── [images and media files]
+│
+├── assets/                         ← Images and media files
+│
 ├── package.json
 └── README.md
 ```
@@ -89,9 +92,9 @@ CulturalThailand/
 * **HTML5** – Semantic markup & Web Components
 * **CSS3 / Tailwind CSS** – Utility-first responsive styling
 * **JavaScript (ES6+)** – Component logic & interactivity
-* **Web Components API** – Reusable custom elements
-* **Git & GitHub** – Version control & collaboration
-* **Node.js / npm** – Package management & build tools
+* **Web Components API** – Custom reusable UI elements
+* **Git & GitHub** – Version control
+* **Node.js / npm** – Build tools & Tailwind CLI
 
 ---
 
@@ -103,67 +106,74 @@ CulturalThailand/
 * **npm** (comes with Node.js)
 * **Git**
 
+---
+
 ### Steps
 
-1. **Clone the repository**
+#### 1. Clone the repository
 
 ```bash
 git clone https://github.com/hsetyiupaing/CulturalThailand.git
 cd CulturalThailand
 ```
 
-2. **Install dependencies**
+#### 2. Install dependencies
 
 ```bash
 npm install
 ```
 
-3. **Build Tailwind CSS** (if needed)
+#### 3. Build Tailwind CSS
 
 ```bash
 npm run build:css
 ```
 
-Or watch for changes during development:
+Or watch for changes:
 
 ```bash
 npm run watch:css
 ```
 
-4. **Start a local server** (optional)
+#### 4. Start local development server
 
-* VS Code **Live Server** extension
-* Python:
+You can use:
+
+**VS Code Live Server**, or:
 
 ```bash
 python -m http.server 8000
 ```
 
-* Node.js:
+or:
 
 ```bash
 npx http-server
 ```
 
-5. **Open in browser**
+#### 5. Open in browser
 
-Navigate to `http://localhost:8000` (or your server port)
+```
+http://localhost:8000/src/docs/index.html
+```
 
 ---
 
 ## 💻 Usage
 
-* Open `docs/index.html` in browser
-* Navigate via the Header component
-* Explore cultural locations, information, and team details
-* Submit inquiries through the Contact Us form
+* Open `src/docs/index.html` in your browser
+* Navigate using the custom `<header>` component
+* Explore cultural content and location pages
+* Use **Contact Us** form for inquiries
+
+---
 
 ### Development Workflow
 
-* Edit HTML in `docs/`
-* Update JS components in `src/js/components/`
-* Adjust styles in `src/css/input.css` or via Tailwind classes
-* Test responsiveness using browser DevTools
+* Edit HTML pages inside **`src/docs/`**
+* Edit JavaScript components inside **`src/js/components/`**
+* Update CSS via Tailwind or `src/css/input.css`
+* Test responsive behavior with DevTools
 
 ---
 
@@ -171,33 +181,37 @@ Navigate to `http://localhost:8000` (or your server port)
 
 ### Main Pages
 
-| Page                     | Description                                                 |
-| ------------------------ | ----------------------------------------------------------- |
-| **index.html**           | Home page with hero banner, culture highlights, FAQ section |
-| **about.html**           | Mission, Vision, Our Story, and team profiles               |
-| **contactus.html**       | Contact form for inquiries                                  |
-| **ethnic.html**          | Information about ethnic groups and cultural diversity      |
-| **famousLocations.html** | Grid of 10 famous Thai locations                            |
-| **locations/**           | Individual pages for each famous location                   |
+| Page                     | Description                                    |
+| ------------------------ | ---------------------------------------------- |
+| **index.html**           | Homepage with hero banner, key highlights, FAQ |
+| **about.html**           | Mission, vision, team profiles                 |
+| **contactus.html**       | Contact form                                   |
+| **ethnic.html**          | Information on Thai ethnic groups              |
+| **famousLocations.html** | Grid gallery of famous locations               |
+| **locations/**           | Individual location detail pages               |
+
+---
 
 ### Key Web Components
 
-* `<hero-banner>` – Hero image with overlay title
-* `<contentcard-w-image>` – Text + image sections
-* `<content-card>` – Simple text card
-* `<profile-card>` – Team member card
-* `<location-card>` – Location grid item
-* `<faq-section>` – FAQ accordion
-* `<header>` – Navigation header
-* `<footer>` – Footer
+* `<hero-banner>`
+* `<contentcard-w-image>`
+* `<content-card>`
+* `<profile-card>`
+* `<location-card>`
+* `<faq-section>`
+* `<header>`
+* `<footer>`
+
+---
 
 ### Example Usage
 
 ```html
-<hero-banner title="Welcome to Cultural Thailand" image="../../assets/intropic.jpg"></hero-banner>
+<hero-banner title="Welcome to Cultural Thailand" image="../../../assets/intropic.jpg"></hero-banner>
 
 <contentcard-w-image
-  image="../../assets/contentImage.png"
+  image="../../../assets/contentImage.png"
   title="Discover the Rich Culture of Thailand"
   body="Explore traditions, stunning architecture, and delicious cuisine..."
   addedStyle="bg-gradient-to-r from-yellow-300 via-yellow-400 to-yellow-500"
@@ -207,7 +221,7 @@ Navigate to `http://localhost:8000` (or your server port)
   name="Hset Yiu Paing"
   title="JS Developer"
   university="Asia-Pacific International University"
-  image="../../assets/john.png">
+  image="../../../assets/john.png">
 </profile-card>
 
 <location-card
@@ -229,34 +243,34 @@ Navigate to `http://localhost:8000` (or your server port)
 
 ## 📝 About the Project
 
-* Preserves and celebrates Thai cultural heritage
+* Celebrates and preserves Thai culture
 * Supports local communities and artisans
-* Provides accessible education about cultural traditions
-* Promotes ethical and responsible cultural tourism
+* Provides educational cultural content
+* Promotes ethical tourism
 
 ---
 
 ## 📜 License
 
-This project is licensed under the **ISC License**. See `package.json` for details.
+This project is licensed under the **ISC License**.
+See `package.json` for complete information.
 
 ---
 
 ## 🔗 Links
 
-* **GitHub Repository** – [hsetyiupaing/CulturalThailand](https://github.com/hsetyiupaing/CulturalThailand)
-* **Web Link** - [CulturalThailadWeb]()
+* **GitHub Repository** – [https://github.com/hsetyiupaing/CulturalThailand](https://github.com/hsetyiupaing/CulturalThailand)
+* **Web Link** – *(to be added once deployment is configured)*
 * **University** – Asia-Pacific International University
 
 ---
 
 ## 📧 Contact
 
-For inquiries or contributions, visit the **Contact Us** page on the website or submit an issue on GitHub.
+For inquiries or contributions, visit the **Contact Us** page or open an issue on GitHub.
 
 ---
 
 **Last Updated:** December 1, 2025
 
----
 
